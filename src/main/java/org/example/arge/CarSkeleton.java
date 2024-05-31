@@ -20,16 +20,31 @@ public class CarSkeleton {
         return description;
     }
 
-    public void startEngine() {
-        System.out.println("engine start");
+    public String  startEngine() {
+        return getName() + " starting engine.";
     }
 
-    public void drive() {
-        this.runEngine();
-        System.out.println("engine drive.");
+    public String drive() {
+        runEngine(this);
+        return getName() + " is driving.";
     }
 
-    protected void runEngine(){
-        System.out.println("engine run.");
+    protected void runEngine(CarSkeleton carSkeleton){
+        if( carSkeleton instanceof ElectricCar){
+            double avgKmPerCharge  = ((ElectricCar)carSkeleton).getAvgKmPerCharge();
+            int batterySize = ((ElectricCar)carSkeleton).getBatterySize();
+            System.out.println("The car engine is starting with electric. Per charge: " + avgKmPerCharge + " battery size: " + batterySize);
+        } else if ( carSkeleton instanceof GasPoweredCar){
+            double averageKmPerLiter  = ((GasPoweredCar)carSkeleton).getAverageKmPerLiter();
+            int cylinders = ((GasPoweredCar)carSkeleton).getCylinders();
+            System.out.println("The car engine is starting with gasPowered. Per avgKmPerLiter: " + averageKmPerLiter + " cylinders: " + cylinders);
+        } else if (carSkeleton instanceof HybridCar) {
+            double avgKmPerLiter  = ((HybridCar)carSkeleton).getAvgKmPerLiter();
+            int cylinders = ((HybridCar)carSkeleton).getCylinders();
+            int batterySize = ((HybridCar)carSkeleton).getBatterySize();
+            System.out.println("The car engine is starting with Hybrid. Per avgKmPerLiter: " + avgKmPerLiter + " cylinders: " + cylinders + " battery size: " + batterySize);
+        } else {
+
+        }
     }
 }

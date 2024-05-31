@@ -8,16 +8,16 @@ public class Mitsubishi extends Car{
 
     @Override
     public String startEngine() {
-        return super.startEngine();
+        return getName() + "engine is starting.";
     }
 
     @Override
     public String accelerate() {
-        return super.accelerate();
+        return getName() + "is accelerating.";
     }
 
     @Override
     public String brake() {
-        return super.brake();
+        return getName() + "is brake.";
     }
 }

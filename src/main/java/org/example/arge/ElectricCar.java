@@ -27,8 +27,13 @@ public class ElectricCar extends CarSkeleton{
     }
 
     @Override
-    public void drive() {
-        super.drive();
-        System.out.println(" motor running.");
+    public String startEngine() {
+        runEngine(this);
+        return getName() + " car starting.";
+    }
+
+    @Override
+    public String drive() {
+        return "run from Electric car.";
     }
 }

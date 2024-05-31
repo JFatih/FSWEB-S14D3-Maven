@@ -6,17 +6,17 @@ public class Ford extends Car{
     }
 
     @Override
-    public String accelerate() {
-        return super.accelerate();
+    public String startEngine() {
+        return getName() + "engine is starting.";
     }
 
     @Override
-    public String startEngine() {
-        return super.startEngine();
+    public String accelerate() {
+        return getName() + "is accelerating.";
     }
 
     @Override
     public String brake() {
-        return super.brake();
+        return getName() + "is brake.";
     }
 }
